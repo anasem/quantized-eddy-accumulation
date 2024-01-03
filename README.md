@@ -61,7 +61,7 @@ local machine, then type `make` similar to the following commands
 
 
 ```
-git clone git@github.com:anasem/quantized-eddy-accumulation.git
+git clone https://github.com/anasem/quantized-eddy-accumulation.git
 cd quantized-eddy-accumulation
 make
 ```
