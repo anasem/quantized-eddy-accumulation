@@ -1,7 +1,7 @@
 message("Sourcing dependencies")
 
-project_dir     <- "~/Projects/improved-REA/public-repo"
-setwd(project_dir)
+# Change this to a different path if dersired
+project_dir     <- getwd()
 
 # List of packages to be loaded
 packages <- c("data.table", "ggplot2", "patchwork", "Rcpp", 
