@@ -55,7 +55,6 @@ theoretical_rates <-
     theoretical_rates[, .(x = seq(0, 10), 
                       prob = dbinom(seq(0, 10), size = 10, p = rate/10)), 
                       by = .(ratio, rate)]
-
 ridges_plot <- 
     ggplot(rates, aes(x = rate, y = as.factor(ratio))) +
       geom_density_ridges(scale = 3,
@@ -65,7 +64,9 @@ ridges_plot <-
                           draw_baseline = TRUE, 
                           binwidth = 1,
                           alpha = .5,
-                          color = "gray30", show.legend = FALSE)  +
+                          col = mp(7, palette = palette_AE4), 
+                          fill = mp(6, palette = palette_AE4),
+                          show.legend = FALSE)  +
       geom_ridgeline(data = theoretical_rates, 
                      scale = 3,
                      fill = NA, show.legend = FALSE, lty = 3,
@@ -80,7 +81,6 @@ ridges_plot <-
                      aes(x, y = as.factor(ratio), 
                          height = prob), size = .7) +
       theme_ae23()  +
-      scale_fill_manual(values = unname(mp(1:4 + 2, palette = pallete_AE3))) +
       theme(text = element_text(family = "Carrois Gothic"),
             panel.grid.minor.x = element_blank(),
             panel.grid.major.y = element_line(color = "gray90"),
