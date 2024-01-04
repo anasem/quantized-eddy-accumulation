@@ -1,6 +1,7 @@
 # Configuration for input data
 {
     download_input_data <- TRUE
+    download_timeout <- 600 # [seconds] increase this if you have slow internet connection
     raw_input_rds_fn <- file.path(project_dir, "input/raw_data_input.rds")
 }
 
