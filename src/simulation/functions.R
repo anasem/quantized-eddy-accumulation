@@ -145,6 +145,12 @@ error_summary <- function(error, reference) {
     )
 }
 
+nondim_err_stats  <- function(nondim_error) {
+    return(
+           list(nondim_u = sd(nondim_error, na.rm = TRUE), 
+                nondim_err_mean = mean(nondim_error, na.rm = TRUE))
+           )
+}
 
 
 # Cut stability into three classes
@@ -154,4 +160,108 @@ cut_zL3 <- function(zL) {
                   'stable: ζ [0.002, +∞)')
     cut(zL, breaks = c(-Inf, -.033, 0.002, Inf), right = FALSE, zL_labels)
 }
+
+# Eq. 9.4 Foken HoM, 2004
+# Calculates Rs_wc, the ratio of local covariance to the total covariance in the
+# averaging interval.
+#
+# In general, the time series is steady state if Rs_wc is less than 0.3
+steady_state_ratio <- function(w, C, number_of_groups = 6) {
+
+    N_total <- length(w)
+    grp_size <- N_total/number_of_groups
+    total_cov <- bcov(w,C)
+
+    # Calculate local covariances
+    dt <- data.table(w = w, C = C)
+
+    dt.sum <- dt[ , .(local_cov = bcov(w,C), 
+                      N_per_group = .N), by = floor(seq_along(w) / grp_size)]
+
+    local_cov <- dt.sum[N_per_group > (grp_size/2), mean(local_cov, na.rm = TRUE)]
+
+    # Then calculate mean of local covariances # Eq. 9.4 Foken HoM, 2004
+    Rs_wc <-  abs((local_cov - total_cov)/total_cov)
+    return(Rs_wc)
+
+}
+
+dry_air_density <- function(P_a, Ta) {
+    Rs_a <- 287.058 # J/(kg. K) specific gas constant for dry air
+    rho_a <- P_a / (Rs_a  * Ta)
+    rho_a
+}
+
+#' Calculate specific heat capacity for a gas species
+#' 
+#' at constant pressure (isobaric specific heat capacity)
+#' @param Ta gas  temperature (kelvin)
+#' @return heat capacity of selected gas in J/(kg.K)
+#' @export
+gas_heat_capacity <- function(Ta, species  = c("air",  "H2O", "CO2")) {
+    # \cite{himmelblauBasicPrinciplesCalculations2015}
+    #  Heat capacity equations at 1 atm pressure and temperature range 273-1800
+
+    # Define constants
+    const <- list()
+    # Molecular mass of dry air [kg/mol]
+    const$Ma <- 28.9647e-3
+    # Molecular mass of water vapour [kg/mol]
+    const$Mv <- 18.01528e-3
+    const$mu <- const$Ma/const$Mv
+
+    # Specific gas constants for water vapor and dry air
+    const$Rs_v <- 461.495 # J/(kg·K)
+    const$Rs_d <- 287.058 # J/(kg·K) dry air
+
+    # universal gas constant
+    # [m3⋅Pa⋅K−1⋅mol−1]
+    const$R <- 8.31446261815324
+      
+
+
+
+    species <- match.arg(species)
+
+    if(species == "air") {
+        # Air_gas 
+        A <- 28.09
+        B <- 0.1965e-2
+        C <- 0.4799e-5
+        D <- -1.965e-9
+        convert_to_C <- FALSE
+        molar_mass <- const$Ma
+    }  else if (species == "H2O") {
+        # Water vapor T in C
+        A <- 33.46
+        B <- 0.6880e-2
+        C <- 0.7604e-5
+        D <- -3.593e-9
+        convert_to_C <- TRUE
+        molar_mass <- const$Mv
+    } else if (species == "CO2") {
+        # CO2 T in C
+        A <- 36.11
+        B <- 4.233e-2
+        C <- -2.887e-5
+        D <- 7.464e-9
+        convert_to_C <- TRUE
+        molar_mass <- const$Mco2
+    }
+
+    if (convert_to_C) {
+        Ta <- Ta - 273.15
+    }
+    Cp <- (A+B*(Ta) + C*(Ta^2) + D*(Ta^3))/molar_mass
+    return(Cp)
+}
+
+water_vapor_partial_pressure <- function(rho_v, Ta) {
+    Rs_v <- 461.5 # J/(kg.K) specific gas constant for water vapour
+    e <- rho_v * Rs_v * Ta # J/m3 => Pa
+    return(e)
+}
+
+
+
 

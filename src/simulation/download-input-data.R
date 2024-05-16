@@ -1,20 +1,41 @@
 source("src/simulation/deps.R")
-source("src/config.R")
+source("src/config/default.R")
+
 
 if (download_input_data) {
-    file_md5 <- "becab4b9f95f3bd02ccff5f9cbc1bc5d"
-    message("Downloading input data")
 
     options(timeout = max(download_timeout, getOption("timeout")))
 
-    download.file("https://zenodo.org/records/10300363/files/BS_EC_14_DAYS_raw.rds?download=1",
-                  destfile = raw_input_rds_fn)
-    message("Verifying downloaded data")
-    if (!identical(unname(tools::md5sum(raw_input_rds_fn)), file_md5)) {
-        stop("Downloaded file verification failed, please rety.")
+    # Download and verify each file in the list
+    for (file_name in names(remote_files)) {
+        destfile <- file.path(input_data_dir, file_name)
+        file_info <- remote_files[[file_name]]
+        # Check if files exist, check MD5 checksums, and download if necessary
+        if (file.exists(destfile)) {
+            message("File ", file_name, " already exists.")
+            if (identical(unname(tools::md5sum(destfile)), file_info$md5)) {
+                message("MD5 checksum matches. Skipping ", file_name)
+                next
+            } else {
+                message("MD5 checksum does not match for ", file_name, 
+                        ". Redownloading.")
+            }
+        }
+        
+        # Download the file
+        download.file(file_info$url, destfile = destfile)
+        
+        # Verify the file's MD5 checksum
+        message("Verifying downloaded data for ", file_name)
+        if (!identical(unname(tools::md5sum(destfile)), file_info$md5)) {
+            stop("Downloaded file verification failed for ", file_name, 
+                 ", please retry.")
+        }
+        
+        # Display the size of the downloaded file
+        message("File size of ", file_name, ": ", 
+                round(file.size(destfile)/1024^2, 2), " MB")
     }
-
-    # Show a message file size of the downloaded file
-    message("File size of downloaded file: ", 
-    round(file.size(raw_input_rds_fn)/1024^2, 2), " MB")
 }
+
+

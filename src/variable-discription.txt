@@ -1,0 +1,201 @@
+perf_dt variable description
+
+aiid              ; unique identifier for the averaging interval (30 min)
+co2_flux_ldb      ; CO2 flux using relatxed eddy accumulation with linear deadband of 0.5 * sd(w)
+co2_up_mean_ldb   ; mean CO2 concentration in updraft for REA_0.5_db_method
+co2_down_mean_ldb ; mean CO2 concentration in downdraft for REA_0.5_db_method
+h2o_up_mean_ldb   ; mean H2O concentration in updraft for REA_0.5_db_method
+h2o_down_mean_ldb ; mean H2O concentration in downdraft for REA_0.5_db_method
+w_up_mean_ldb     ; mean vertical wind speed in updraft for REA_0.5_db_method
+w_down_mean_ldb   ; mean vertical wind speed in downdraft for REA_0.5_db_method
+N_up_ldb          ; number of samples in updraft for REA_0.5_db_method
+N_down_ldb        ; number of samples in downdraft for REA_0.5_db_method
+N_tot_ldb         ; total number of samples for REA_0.5_db_method
+ts_up_mean_ldb    ; mean temperature in updraft for REA_0.5_db_method
+ts_down_mean_ldb  ; mean temperature in downdraft for REA_0.5_db_method
+w_sd_ldb          ; standard deviation of vertical wind speed for REA_0.5_db_method
+r_wc_ldb          ; correlation coefficient between w and CO2 for REA_0.5_db_method
+r_wTs_ldb         ; correlation coefficient between w and Ts for REA_0.5_db_method
+co2_sd_ldb        ; standard deviation of CO2 for REA_0.5_db_method
+co2_mean_ldb      ; mean CO2 concentration for REA_0.5_db_method
+Ts_sd_ldb         ; standard deviation of temperature for REA_0.5_db_method
+w_mean_ldb        ; mean vertical wind speed for REA_0.5_db_method
+co2_delta_ldb     ; CO2 concentration difference for REA_0.5_db_method
+ts_delta_ldb      ; temperature difference for REA_0.5_db_method
+h2o_delta_ldb     ; H2O concentration difference for REA_0.5_db_method
+beta_an_ldb       ; Analytical REA beta for REA_0.5_db_method
+w_delta_ldb       ; vertical wind speed difference for REA_0.5_db_method
+time              ; start time of the averaging interval
+co2_flux          ; Reference eddy covariance CO2 flux
+ts_flux           ; Reference eddy covariance Ts flux
+h2o_flux          ; Reference eddy covariance H2O flux
+co2_up_mean       ; mean CO2 concentration in updraft
+co2_down_mean     ; mean CO2 concentration in downdraft
+h2o_up_mean       ; mean H2O concentration in updraft
+h2o_down_mean     ; mean H2O concentration in downdraft
+N_up              ; number of samples in updraft
+N_down            ; number of samples in downdraft
+N_tot             ; total number of samples
+Ts_up_mean        ; mean temperature in updraft
+Ts_down_mean      ; mean temperature in downdraft
+w_sd              ; standard deviation of vertical wind speed
+w_max             ; maximum vertical wind speed
+r_wc              ; correlation coefficient between w and CO2
+r_wTs             ; correlation coefficient between w and Ts
+r_wH2o            ; correlation coefficient between w and H2O
+co2_sd            ; standard deviation of CO2
+h2o_sd            ; standard deviation of H2O
+co2_mean          ; mean CO2 concentration
+Ts_sd             ; standard deviation of temperature
+w_mean            ; mean vertical wind speed
+w_abs_mean        ; mean absolute vertical wind speed
+zL                ; stability parameter z/Obukhov length
+ustar             ; friction velocity
+U                 ; mean horizontal wind speed
+Rs_wTs            ; stationarity parameter for w and Ts
+Rs_wH2o           ; stationarity parameter for w and H2O
+Rs_wc             ; stationarity parameter for w and CO2
+beta_co2          ; reference REA beta for CO2 calculated from the true flux
+beta_ts           ; reference REA beta for Ts calculated from the true flux
+beta_h2o          ; reference REA beta for H2O calculated from the true flux
+beta_w            ; beta calcualted from wind statistics
+co2_delta         ; CO2 concentration difference
+h2o_delta         ; H2O concentration difference
+beta_an           ; Analytical REA beta
+beta_const        ; constant REA beta
+co2_flux_db1      ; CO2 flux using REA with deadband of 0.9 * sd(w)
+co2_up_mean_db1   ; mean CO2 concentration in updraft for REA_0.9_db_method
+co2_down_mean_db1 ; mean CO2 concentration in downdraft for REA_0.9_db_method
+h2o_up_mean_db1   ; mean H2O concentration in updraft for REA_0.9_db_method
+h2o_down_mean_db1 ; mean H2O concentration in downdraft for REA_0.9_db_method
+w_up_mean_db1     ; mean vertical wind speed in updraft for REA_0.9_db_method
+w_down_mean_db1   ; mean vertical wind speed in downdraft for REA_0.9_db_method
+N_up_db1          ; number of samples in updraft for REA_0.9_db_method
+N_down_db1        ; number of samples in downdraft for REA_0.9_db_method
+N_tot_db1         ; total number of samples for REA_0.9_db_method
+ts_up_mean_db1    ; mean temperature in updraft for REA_0.9_db_method
+ts_down_mean_db1  ; mean temperature in downdraft for REA_0.9_db_method
+w_sd_db1          ; standard deviation of vertical wind speed for REA_0.9_db_method
+r_wc_db1          ; correlation coefficient between w and CO2 for REA_0.9_db_method
+r_wTs_db1         ; correlation coefficient between w and Ts for REA_0.9_db_method
+co2_sd_db1        ; standard deviation of CO2 for REA_0.9_db_method
+co2_mean_db1      ; mean CO2 concentration for REA_0.9_db_method
+Ts_sd_db1         ; standard deviation of temperature for REA_0.9_db_method
+w_mean_db1        ; mean vertical wind speed for REA_0.9_db_method
+co2_delta_db1     ; CO2 concentration difference for REA_0.9_db_method
+ts_delta_db1      ; temperature difference for REA_0.9_db_method
+h2o_delta_db1     ; H2O concentration difference for REA_0.9_db_method
+beta_an_db1       ; Analytical REA beta for REA_0.9_db_method
+w_delta_db1       ; vertical wind speed difference for REA_0.9_db_method
+beta_co2_ldb      ; REA beta from CO2 with linear deadband of 0.5 * sd(w)
+beta_ts_ldb       ; REA beta from Ts with linear deadband of 0.5 * sd(w)
+beta_h2o_ldb      ; REA beta from H2O with linear deadband of 0.5 * sd(w)
+beta_w_ldb        ; REA beta from wind statistics with linear deadband of 0.5 * sd(w)
+beta_co2_db1      ; REA beta from CO2 with deadband of 0.9 * sd(w)
+beta_ts_db1       ; REA beta from Ts with deadband of 0.9 * sd(w)
+beta_h2o_db1      ; REA beta from H2O with deadband of 0.9 * sd(w)
+beta_w_db1        ; REA beta from wind statistics with deadband of 0.9 * sd(w)
+beta_ts_const_ldb ; REA beta from Ts with constant deadband of 0.5 * sd(w)
+beta_ts_const_db1 ; REA beta from Ts with constant deadband of 0.9 * sd(w)
+co2_flux_bts      ; REA CO2 flux calculated using beta from Ts
+co2_flux_ban      ; REA CO2 flux calculated using analytical beta
+co2_flux_bw       ; REA CO2 flux calculated using beta from w
+co2_flux_bh2o     ; REA CO2 flux calculated using beta from H2O
+co2_flux_ldb_bts  ; REA CO2 flux calculated using beta from Ts with linear deadband of 0.5 * sd(w)
+co2_flux_ldb_bh2o ; REA CO2 flux calculated using beta from H2O with linear deadband of 0.5 * sd(w)
+co2_flux_ldb_bw   ; REA CO2 flux calculated using beta from w with linear deadband of 0.5 * sd(w)
+co2_flux_ldb_bcst ; REA CO2 flux calculated using constant beta from Ts with linear deadband of 0.5 * sd(w)
+co2_flux_db1_bts  ; REA CO2 flux calculated using beta from Ts with deadband of 0.9 * sd(w)
+co2_flux_db1_bh2o ; REA CO2 flux calculated using beta from H2O with deadband of 0.9 * sd(w)
+co2_flux_db1_bw   ; REA CO2 flux calculated using beta from w with deadband of 0.9 * sd(w)
+co2_flux_db1_bcst ; REA CO2 flux calculated using constant beta from Ts with deadband of 0.9 * sd(w)
+h2o_flux_bts      ; REA H2O flux calculated using beta from Ts
+h2o_flux_ban      ; REA H2O flux calculated using analytical beta
+h2o_flux_bco2     ; REA H2O flux calculated using beta from CO2
+h2o_flux_bw       ; REA H2O flux calculated using beta from w
+h2o_flux_ldb_bts  ; REA H2O flux calculated using beta from Ts with linear deadband of 0.5 * sd(w)
+h2o_flux_ldb_co2  ; REA H2O flux calculated using beta from CO2 with linear deadband of 0.5 * sd(w)
+h2o_flux_ldb_bw   ; REA H2O flux calculated using beta from w with linear deadband of 0.5 * sd(w)
+h2o_flux_ldb_bcst ; REA H2O flux calculated using constant beta from Ts with linear deadband of 0.5 * sd(w)
+h2o_flux_db1_bts  ; REA H2O flux calculated using beta from Ts with deadband of 0.9 * sd(w)
+h2o_flux_db1_co2  ; REA H2O flux calculated using beta from CO2 with deadband of 0.9 * sd(w)
+h2o_flux_db1_bw   ; REA H2O flux calculated using beta from w with deadband of 0.9 * sd(w)
+h2o_flux_db1_bcst ; REA H2O flux calculated using constant beta from Ts with deadband of 0.9 * sd(w)
+ts_flux_ldb_bw    ; REA Ts flux calculated using beta from w with linear deadband of 0.5 * sd(w)
+ts_flux_db1_bw    ; REA Ts flux calculated using beta from w with deadband of 0.9 * sd(w)
+alpha_co2_q       ; Alpha for CO2 for QEA
+alpha_ts_q        ; Alpha for Ts for QEA
+alpha_h2o_q       ; Alpha for H2O for QEA
+co2_up_mean_q     ; mean CO2 concentration in updraft for QEA
+co2_down_mean_q   ; mean CO2 concentration in downdraft for QEA
+co2_mean_q        ; mean CO2 concentration for QEA
+h2o_up_mean_q     ; mean H2O concentration in updraft for QEA
+h2o_down_mean_q   ; mean H2O concentration in downdraft for QEA
+ts_up_mean_q      ; mean temperature in updraft for QEA
+ts_down_mean_q    ; mean temperature in downdraft for QEA
+wq_mean           ; mean vertical wind speed for QEA
+N_up_q            ; Number of samples in updraft for QEA
+N_down_q          ; Number of samples in downdraft for QEA
+N_q               ; Total number of samples for QEA
+wq0_sd            ; Standard deviation of vertical wind speed for quantized wind speed using QEA0
+wq_sd             ; Standard deviation of vertical wind speed
+wqr_sd            ; quantization error standard deviation
+er_q_sd           ; Quantizer error standard deviation
+er_q_w_r          ; Correlation of quantizer error with w
+er_q_co2_r        ; Correlation of quantizer error with CO2
+er_d_sd           ; Diffusion error standard deviation
+wq_abs_mean       ; Absolute vertical wind speed for quantized wind speed
+co2_flux_q        ; CO2 flux for QEA
+ts_flux_q Ts      ; flux for QEA
+h2o_flux_q        ; H2O flux for QEA
+h2o_flux_q0       ; H2O flux for QEA0 (without error diffusio)
+co2_flux_q0       ; CO2 flux for QEA0 (without error diffusion)
+station           ; Station name
+co2_flux_q0_cc    ; CO2 flux for QEA0 (without error diffusion and scaled variance)
+h2o_flux_q0_cc    ; H2O flux for QEA0 (without error diffusion and scaled variance)
+fe_co2_bts        ; Flux error for CO2 for REA-BTS
+fe_h2o_bts        ; Flux error for H2O for REA-BTS
+fe_co2_ldb_bts    ; Flux error for CO2 for REA-0.5-db with beta from Ts
+fe_h2o_ldb_bts    ; Flux error for H2O for REA-0.5-db with beta from Ts
+fe_co2_ldb_bcst   ; Flux error for CO2 for REA-0.5-db with constant beta from Ts
+fe_h2o_ldb_bcst   ; Flux error for H2O for REA-0.5-db with constant beta from Ts
+fe_co2_ldb_bw     ; Flux error for CO2 for REA-0.5-db with beta from w
+fe_h2o_ldb_bw     ; Flux error for H2O for REA-0.5-db with beta from w
+fe_ts_ldb_bw      ; Flux error for Ts for REA-0.5-db with beta from w
+fe_co2_q          ; Flux error for CO2 for QEA
+fe_h2o_q          ; Flux error for H2O for QEA
+fe_ts_q           ; Flux error for Ts for QEA
+fe_co2_q0         ; Flux error for CO2 for QEA0
+fe_h2o_q0         ; Flux error for H2O for QEA0
+fe_co2_db1_bw     ; Flux error for CO2 for REA-0.9-db with beta from w
+fe_h2o_db1_bw     ; Flux error for H2O for REA-0.9-db with beta from w
+fe_ts_db1_bw      ; Flux error for Ts for REA-0.9-db with beta from w
+fe_co2_db1_bts    ; Flux error for CO2 for REA-0.9-db with beta from Ts
+fe_h2o_db1_bts    ; Flux error for H2O for REA-0.9-db with beta from Ts
+fe_co2_db1_bcst   ; Flux error for CO2 for REA-0.9-db with constant beta from Ts
+fe_h2o_db1_bcst   ; Flux error for H2O for REA-0.9-db with constant beta from Ts
+ndfe_co2_q        ; Normalized flux error for CO2 for QEA
+ndfe_h2o_q        ; Normalized flux error for H2O for QEA
+ndfe_Ts_q         ; Normalized flux error for Ts for QEA
+ndfe_theory       ; Theoretical non-dimensional flux error
+ndfe_co2_q0       ; Normalized flux error for CO2 for QEA0
+ndfe_h2o_q0       ; Normalized flux error for H2O for QEA0
+ndfe_co2_bts      ; Normalized flux error for CO2 for REA with beta from Ts
+ndfe_h2o_bts      ; Normalized flux error for H2O for REA with beta from Ts
+ndfe_co2_ldb_bts  ; Normalized flux error for CO2 for REA-0.5-db with beta from Ts
+ndfe_h2o_ldb_bts  ; Normalized flux error for H2O for REA-0.5-db with beta from Ts
+ndfe_co2_ldb_bcst ; Normalized flux error for CO2 for REA-0.5-db with constant beta from Ts
+ndfe_h2o_ldb_bcst ; Normalized flux error for H2O for REA-0.5-db with constant beta from Ts
+ndfe_co2_ldb_bw   ; Normalized flux error for CO2 for REA-0.5-db with beta from w
+ndfe_h2o_ldb_bw   ; Normalized flux error for H2O for REA-0.5-db with beta from w
+ndfe_ts_ldb_bw    ; Normalized flux error for Ts for REA-0.5-db with beta from w
+ndfe_co2_db1_bw   ; Normalized flux error for CO2 for REA-0.9-db with beta from w
+ndfe_h2o_db1_bw   ; Normalized flux error for H2O for REA-0.9-db with beta from w
+ndfe_ts_db1_bw    ; Normalized flux error for Ts for REA-0.9-db with beta from w
+ndfe_co2_db1_bts  ; Normalized flux error for CO2 for REA-0.9-db with beta from Ts
+ndfe_h2o_db1_bts  ; Normalized flux error for H2O for REA-0.9-db with beta from Ts
+ndfe_co2_db1_bcst ; Normalized flux error for CO2 for REA-0.9-db with constant beta from Ts
+ndfe_h2o_db1_bcst ; Normalized flux error for H2O for REA-0.9-db with constant beta from Ts
+zl_cat            ; Stability category
+
+

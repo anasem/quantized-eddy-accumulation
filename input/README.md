@@ -3,7 +3,8 @@ located here. You can put your own high-frequency raw data as one RDS file.
 
 for example: `raw_data_input.rds`
 
-If you want to use your own data the file has to have the following variables:
+If you want to use your own high-frequency data as input for the simulation, the
+input file needs to have the following variables:
 
 | Variable Name | Description                 | Units                    |
 |---------------|-----------------------------|--------------------------|
