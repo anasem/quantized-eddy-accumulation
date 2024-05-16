@@ -53,7 +53,7 @@ diffusion algorithm and an example of [flux calculation](implementation/flux-cal
 
 ## How to run
 
-**Note**: running the analysis for the subset dataset will download about 425 MB of raw [input data from zenodo](https://doi.org/10.5281/zenodo.11108797). The full dataset is about 2.5 GB.
+**Note**: running the analysis for the subset dataset will download about 425 MB of raw [input data from zenodo](https://doi.org/10.5281/zenodo.11108797). The full dataset is about 2.5 GB
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11108797.svg)](https://doi.org/10.5281/zenodo.11108797)
 
 
@@ -82,13 +82,6 @@ To change the simulation parameters or the data used, edit the file
 To minimize the errors in fluxes calculated via QEA, it is recommended to use
 a quantized level (full-scale value) in the range [4,5] σw and a quantization
 threshold in the range 0.55 to 0.85 of the full-scale value
-
-<p align="center">
-  <img src="output/figures/recommended-param-choice.png" alt="recommended
-  parameters choice">
-</p>
-
-
 
 ## Running the simulation with your own data
 
