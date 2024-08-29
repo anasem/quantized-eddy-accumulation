@@ -2,12 +2,12 @@
 
 *This repository contains code and data supplementary to the paper*
 
-**100-fold improvement in relaxed eddy accumulation flux estimates through error diffusion**
+**Over 100-fold improvement in the accuracy of relaxed eddy accumulation flux estimates through error diffusion**
 
 [Anas Emad](https://orcid.org/0000-0002-0141-5262)
   
-Currently under peer review. A preprint is available on arXiv: 
-https://arxiv.org/abs/2312.17027
+Published in Agricultural and Forest Meteorology  
+https://doi.org/10.1016/j.agrformet.2024.110207
 
 ## Overview
 
@@ -53,7 +53,9 @@ diffusion algorithm and an example of [flux calculation](implementation/flux-cal
 
 ## How to run
 
-**Note**: running the analysis for the subset dataset will download about 425 MB of raw [input data from zenodo](https://doi.org/10.5281/zenodo.11108797). The full dataset is about 2.5 GB
+**Note**: running the analysis for the subset dataset will download about 425 MB of raw [input data from zenodo](https://doi.org/10.5281/zenodo.11108797). 
+The full dataset is about 2.5 GB  
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11108797.svg)](https://doi.org/10.5281/zenodo.11108797)
 
 
